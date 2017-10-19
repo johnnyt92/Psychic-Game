@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Psychic game</title>
+	<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+</head>
+<body>
+	<div class="header">
+
+		<header>The Psychic Game</header>
+
+	</br>
+
+	<div class="body">
+		
+		<h2>Guess what letter I'm thinking of</h2>
+		<br>
+		<h2>"Wins:" + wins</h2>
+		<br>
+		<h2>Losses:</h2>
+		<br>
+		<h2>Guesses Left:</h2>
+		<br>
+		<h2>Guesses so far:</h2>
+
+		<script type="text/javascript">
+
+//Computer Guesses
+var computerChoices = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+//Variables for to keep track of wins, losses, and guesses
+
+var wins = 0
+var losses = 0
+var guessesLeft = 9
+var guesses
+//Random function to pull computer choice
+
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+//function that recognizes the user's key input
+
+document.onkeyup = function(event) {
+	var userGuess = event.key;
+}
+
+if (userGuess = computerGuess) {
+
+}
+
+</script>
