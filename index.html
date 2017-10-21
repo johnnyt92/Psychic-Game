@@ -1,58 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title>Psychic game</title>
 	<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+
+	<script type="text/javascript" src="./assets/javascript/game.js">
+	</script>
+
 
 </head>
 <body>
 	<!-- game -->
 	<div id="game">
-		<p>Press any key to start!</p>
-	</div>
-	<script type="text/javascript">
+		<div class="background">
+			<body background="./assets/images/nebula.jpg" alt="nebula">
+			</div>
 
+			<div class="start">
+				<p>Press any key to start!</p>
+				<img src="./assets/images/65-Alakazam.png" alt="pokemon">
 
-//Computer Guesses
-var computerChoices = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-//Variables for to keep track of wins, losses, and guesses
-var wins = 0
-var losses = 0
-var guessesLeft = 9
-var guesses = []
+			</div>
+		</div>
 
-//function that recognizes the user's key input
-document.onkeyup = function(event) {
-
-var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-
-var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-
-if (userGuess !== computerGuess) {
-	guessesLeft--
-	guesses.push(userGuess)
-};
-
-if (userGuess === computerGuess) {
-	wins++;
-	alert("You Win");
-};
-
-if (guessesLeft === 0){
-	alert("You Lose")
-	guessesLeft = 9
-	guesses = [];
-};
-
-var html =
-"<h1>The Psychic Game</h1>" + "<br>" +
-"<p>Wins: " + wins + "</p>" + "<br>" +
-"<p>Losses: " + losses + "</p>" + "<br>" +
-"<p>Guesses Left: " + guessesLeft + "</p>" + "<br>" +
-"<p>Your Guesses so Far: " + guesses + "</p>";
-
-document.querySelector("#game").innerHTML = html;
-}
-</script>
