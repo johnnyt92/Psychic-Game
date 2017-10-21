@@ -14,23 +14,30 @@ var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
 
-if (guessesLeft === 0){
+
+//If the correct button is pushed then the win alert pops up
+if (userGuess === computerGuess) {
+	wins++;
+	alert("You Win");
+	guessesLeft = 9
+	guesses = [];
+}
+
+//If guesses left = 0 then the lose alert pops up and the game resets
+else if (guessesLeft === 0){
 	alert("You Lose");
 	guessesLeft = 9
 	guesses = [];
 }
 
+//If the user guess is incorrect then the guessesLeft counter is reduced by 1
 else if (userGuess !== computerGuess) {
 	guessesLeft--
 	guesses.push(userGuess)
-}
-
-else if (userGuess === computerGuess) {
-	wins++;
-	alert("You Win");
-	guessesLeft = 9
-	guesses = [];
 };
+
+
+
 
 var html =
 "<header>The Psychic Game</header>" + "<br><br>" +
