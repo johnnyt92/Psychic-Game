@@ -5,11 +5,6 @@ var wins = 0
 var losses = 0
 var guessesLeft = 9
 var guesses = []
-//var pokemon = "./assets/images/65-Alakazam.png"
-
-var img = new Image();
-img.src = "./assets/images/65-Alakazam.png";
-
 
 //Function that recognizes the user's key input
 document.onkeyup = function(event) {
